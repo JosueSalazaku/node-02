@@ -1,152 +1,65 @@
 const path = require("path");
 const fs = require("fs");
 
-console.log("Hello world, this is Node.js");
-console.log(path.basename(__filename));
+function createFolder(folderPath, callback) {
+  fs.mkdir(folderPath, (err) => {
+    if (err) {
+      console.error(`Error creating ${folderPath} folder:`, err);
+    } else {
+      console.log(`${folderPath} folder successfully created`);
+    }
+    if (callback) {
+      callback(err);
+    }
+  });
+}
 
-let myPath =
-  "/Users/josuesalazaku/Developer/BeCode/TheHill/back-End/node-02/server.js";
-
-fs.readFile(myPath, "utf8", (err, data) => {
-  if (err) throw err;
-  console.log(data);
-});
+function createFile(filePath, content, callback) {
+  fs.writeFile(filePath, content, "utf8", (err) => {
+    if (err) {
+      console.error(`Error creating ${filePath} file:`, err);
+    } else {
+      console.log(`${filePath} file successfully created`);
+    }
+    if (callback) {
+      callback(err);
+    }
+  });
+}
 
 const clientPath = "client";
 
-fs.mkdir(clientPath, (err) => {
-  if (err) {
-    console.error("Error! Directory not created bro:", err);
-  } else {
-    console.log("Directory created successfully");
-
-    const newFilePath = path.join(clientPath, "index.html");
-    fs.writeFile(newFilePath, "Hello, this is HTML content!", "utf8", (err) => {
-      if (err) {
-        console.error("Error creating new HTML file", err);
-      } else {
-        console.log("HTML file successfully created");
-      }
-    });
-  }
+createFolder(clientPath, () => {
+  const newFilePath = path.join(clientPath, "index.html");
+  createFile(newFilePath, "Hello, this is HTML content!");
 
   const cssFile = path.join(clientPath, "style.css");
-  fs.writeFile(cssFile, "Hello, this is CSS content!", "utf8", (err) => {
-    if (err) {
-      console.error("Error creating new CSS file", err);
-    } else {
-      console.log("CSS file successfully created");
-    }
+  createFile(cssFile, "Hello, this is CSS content!");
+
+  const contactFolderPath = path.join(clientPath, "contact");
+  createFolder(contactFolderPath, () => {
+    const contactHtml = path.join(contactFolderPath, "index.html");
+    createFile(contactHtml, "Hello, this is HTML content for contact!");
+
+    const contactCss = path.join(contactFolderPath, "style.css");
+    createFile(contactCss, "Hello, this is CSS content for contact!");
   });
-});
 
-const contactFolderPath = path.join(clientPath, "contact");
-fs.mkdir(contactFolderPath, (err) => {
-  if (err) {
-    console.error("Error creating new contact folder", err);
-  } else {
-    console.log("New contact folder successfully created");
-  }
+  const aboutFolderPath = path.join(clientPath, "about");
+  createFolder(aboutFolderPath, () => {
+    const aboutHtml = path.join(aboutFolderPath, "index.html");
+    createFile(aboutHtml, "Hello, this is HTML content for about!");
 
-  const contactHtml = path.join(contactFolderPath, "index.html");
-  fs.writeFile(
-    contactHtml,
-    "Hello, this is HTML content for contact!",
-    "utf8",
-    (err) => {
-      if (err) {
-        console.error("Error creating contact HTML file", err);
-      } else {
-        console.log("Contact HTML file successfully created");
-      }
-    }
-  );
+    const aboutCss = path.join(aboutFolderPath, "style.css");
+    createFile(aboutCss, "Hello, this is CSS content for about!");
+  });
 
-  const contactCss = path.join(contactFolderPath, "style.css");
-  fs.writeFile(
-    contactCss,
-    "Hello, this is CSS content for contact!",
-    "utf8",
-    (err) => {
-      if (err) {
-        console.error("Error creating contact CSS file", err);
-      } else {
-        console.log("Contact CSS file successfully created");
-      }
-    }
-  );
-});
+  const blogFolderPath = path.join(clientPath, "blog");
+  createFolder(blogFolderPath, () => {
+    const blogHtml = path.join(blogFolderPath, "index.html");
+    createFile(blogHtml, "Hello, this is HTML content for blog!");
 
-const aboutFilePaht = path.join(clientPath, "about");
-fs.mkdir(aboutFilePaht, (err) => {
-  if (err) {
-    console.error("Error creating about folder", err);
-  } else {
-    console.log("Found about folder");
-  }
-
-  const aboutHtml = path.join(aboutFilePaht, "index.html");
-  fs.writeFile(
-    aboutHtml,
-    "Hello, this is Html content for contact!",
-    "utf8",
-    (err) => {
-      if (err) {
-        console.error("Error finding about Html", err);
-      } else {
-        console.log("Found about Html file");
-      }
-    }
-  );
-
-  const aboutCss = path.join(aboutFilePaht, "style.css");
-  fs.writeFile(
-    aboutCss,
-    "Hello, this is CSS content for contact!",
-    "utf8",
-    (err) => {
-      if (err) {
-        console.error("Error finding about CSS", err);
-      } else {
-        console.log("Found about Css file");
-      }
-    }
-  );
-});
-
-const blogPath = path.join(clientPath, "blog");
-fs.mkdir(blogPath, (err) => {
-  if (err) {
-    console.error("Error finding blog foler");
-  } else {
-    console.log("Found blog folder");
-  }
-
-  const blogHtml = path.join(blogPath, "index.html");
-  fs.writeFile(
-    blogHtml,
-    "Hello, this is Html content for contact!",
-    "utf8",
-    (err) => {
-      if (err) {
-        console.error("Error finding about Html", err);
-      } else {
-        console.log("Found about Html file");
-      }
-    }
-  );
-
-  const blogCss = path.join(blogPath, "style.css");
-  fs.writeFile(
-    blogCss,
-    "Hello, this is CSS content for contact!",
-    "utf8",
-    (err) => {
-      if (err) {
-        console.error("Error finding about CSS", err);
-      } else {
-        console.log("Found about Css file");
-      }
-    }
-  );
+    const blogCss = path.join(blogFolderPath, "style.css");
+    createFile(blogCss, "Hello, this is CSS content for blog!");
+  });
 });
