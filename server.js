@@ -32,14 +32,48 @@ const clientPath = "client";
 createFolder(clientPath, () => {
   const newFilePath = path.join(clientPath, "index.html");
   createFile(newFilePath, "Hello, this is HTML content!");
+  const htmlContent = `<!DOCTYPE html>
+    <html>
+      <head>
+        <title>My Dynamic HTML Page</title>
+        <link rel="stylesheet" href="style.css">
+      </head>
+      <body>
+        <h1>CLIENT PAGE</h1>
+      </body>
+    </html>`;
+
+  createFile(newFilePath, htmlContent);
 
   const cssFile = path.join(clientPath, "style.css");
   createFile(cssFile, "Hello, this is CSS content!");
+  const cssContent = `body {
+    font-family: "Poppins", sans-serif;
+    background: turquoise;
+    color: blueviolet;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }`;
+  createFile(cssFile, cssContent);
 
   const contactFolderPath = path.join(clientPath, "contact");
   createFolder(contactFolderPath, () => {
     const contactHtml = path.join(contactFolderPath, "index.html");
     createFile(contactHtml, "Hello, this is HTML content for contact!");
+    const htmlContent = `<!DOCTYPE html>
+    <html>
+      <head>
+        <title>My Dynamic HTML Page</title>
+        <link rel="stylesheet" href="style.css">
+      </head>
+      <body>
+        <h1>CONTACT PAGE</h1>
+      </body>
+    </html>`;
+
+    createFile(contactHtml, htmlContent);
 
     const contactCss = path.join(contactFolderPath, "style.css");
     createFile(contactCss, "Hello, this is CSS content for contact!");
@@ -49,6 +83,18 @@ createFolder(clientPath, () => {
   createFolder(aboutFolderPath, () => {
     const aboutHtml = path.join(aboutFolderPath, "index.html");
     createFile(aboutHtml, "Hello, this is HTML content for about!");
+    const htmlContent = `<!DOCTYPE html>
+      <html>
+        <head>
+          <title>My Dynamic HTML Page</title>
+          <link rel="stylesheet" href="style.css">
+        </head>
+        <body>
+          <h1>ABOUT PAGE</h1>
+        </body>
+      </html>`;
+
+    createFile(aboutHtml, htmlContent);
 
     const aboutCss = path.join(aboutFolderPath, "style.css");
     createFile(aboutCss, "Hello, this is CSS content for about!");
@@ -58,6 +104,18 @@ createFolder(clientPath, () => {
   createFolder(blogFolderPath, () => {
     const blogHtml = path.join(blogFolderPath, "index.html");
     createFile(blogHtml, "Hello, this is HTML content for blog!");
+    const htmlContent = `<!DOCTYPE html>
+      <html>
+        <head>
+          <title>My Dynamic HTML Page</title>
+          <link rel="stylesheet" href="style.css">
+        </head>
+        <body>
+          <h1>BLOG PAGE</h1>
+        </body>
+      </html>`;
+
+    createFile(blogHtml, htmlContent);
 
     const blogCss = path.join(blogFolderPath, "style.css");
     createFile(blogCss, "Hello, this is CSS content for blog!");

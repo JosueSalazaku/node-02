@@ -1,1 +1,9 @@
-Hello, this is CSS content!
+body {
+    font-family: "Poppins", sans-serif;
+    background: turquoise;
+    color: blueviolet;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
