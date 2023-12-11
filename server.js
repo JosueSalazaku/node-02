@@ -12,4 +12,22 @@ fs.readFile(myPath, "utf8", (err, data) => {
   console.log(data);
 });
 
-fs.mkdirSync("client");
+const clientPath = "client";
+
+fs.mkdir(clientPath, (err) => {
+  if (err) {
+    console.error("Error! Directory not created bro:", err);
+  } else {
+    console.log("Directory created successfully");
+
+    const newFilePath = path.join(clientPath, "index.html");
+
+//     fs.writeFile(newFilePath, "Hello, this is HTML content!", "utf8", (err) => {
+//       if (err) {
+//         console.error("Error creating new HTML file", err);
+//       } else {
+//         console.log("HTML file successfully created");
+//       }
+//     });
+//   }
+// });
