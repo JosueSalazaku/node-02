@@ -2,6 +2,8 @@ const path = require("path");
 const fs = require("fs");
 const os = require("node:os");
 
+console.log(path.__dirnam);
+
 function createFolder(folderPath, callback) {
   fs.mkdir(folderPath, (err) => {
     if (err) {
@@ -37,7 +39,7 @@ createFolder(clientPath, () => {
     <html>
       <head>
         <title>My Dynamic HTML Page</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="/client/style.css">
       </head>
       <body>
         <h1>CLIENT PAGE</h1>
@@ -69,7 +71,7 @@ createFolder(clientPath, () => {
     <html>
       <head>
         <title>My Dynamic HTML Page</title>
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="/client/contact/style.css">
       </head>
       <body>
         <h1>CONTACT PAGE</h1>
@@ -102,7 +104,7 @@ createFolder(clientPath, () => {
       <html>
         <head>
           <title>My Dynamic HTML Page</title>
-          <link rel="stylesheet" href="style.css">
+          <link rel="stylesheet" href="/client/about/style.css">
         </head>
         <body>
           <h1>ABOUT PAGE</h1>
@@ -135,7 +137,7 @@ createFolder(clientPath, () => {
       <html>
         <head>
           <title>My Dynamic HTML Page</title>
-          <link rel="stylesheet" href="style.css">
+          <link rel="stylesheet" href="/client/blog/style.css">
         </head>
         <body>
           <h1>BLOG PAGE</h1>
