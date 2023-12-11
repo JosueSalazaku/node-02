@@ -121,4 +121,32 @@ fs.mkdir(blogPath, (err) => {
   } else {
     console.log("Found blog folder");
   }
+
+  const blogHtml = path.join(blogPath, "index.html");
+  fs.writeFile(
+    blogHtml,
+    "Hello, this is Html content for contact!",
+    "utf8",
+    (err) => {
+      if (err) {
+        console.error("Error finding about Html", err);
+      } else {
+        console.log("Found about Html file");
+      }
+    }
+  );
+
+  const blogCss = path.join(blogPath, "style.css");
+  fs.writeFile(
+    blogCss,
+    "Hello, this is CSS content for contact!",
+    "utf8",
+    (err) => {
+      if (err) {
+        console.error("Error finding about CSS", err);
+      } else {
+        console.log("Found about Css file");
+      }
+    }
+  );
 });
