@@ -113,3 +113,12 @@ fs.mkdir(aboutFilePaht, (err) => {
     }
   );
 });
+
+const blogPath = path.join(clientPath, "blog");
+fs.mkdir(blogPath, (err) => {
+  if (err) {
+    console.error("Error finding blog foler");
+  } else {
+    console.log("Found blog folder");
+  }
+});
