@@ -12,6 +12,4 @@ fs.readFile(myPath, "utf8", (err, data) => {
   console.log(data);
 });
 
-// fs.mkdirSync(
-//   "/Users/josuesalazaku/Developer/BeCode/TheHill/back-End/node-02/server.js"
-// );
+fs.mkdirSync("client");
