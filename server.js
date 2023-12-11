@@ -21,7 +21,6 @@ fs.mkdir(clientPath, (err) => {
     console.log("Directory created successfully");
 
     const newFilePath = path.join(clientPath, "index.html");
-
     fs.writeFile(newFilePath, "Hello, this is HTML content!", "utf8", (err) => {
       if (err) {
         console.error("Error creating new HTML file", err);
@@ -32,22 +31,48 @@ fs.mkdir(clientPath, (err) => {
   }
 
   const cssFile = path.join(clientPath, "style.css");
-
-  fs.writeFile(cssFile, "Hello, this is HTML content!", "utf8", (err) => {
+  fs.writeFile(cssFile, "Hello, this is CSS content!", "utf8", (err) => {
     if (err) {
-      console.error("Error creating new css file", err);
+      console.error("Error creating new CSS file", err);
     } else {
-      console.log("Css file successfully created");
+      console.log("CSS file successfully created");
     }
   });
 
   const contactFolderPath = path.join(clientPath, "contact");
-
   fs.mkdir(contactFolderPath, (err) => {
     if (err) {
       console.error("Error creating new contact folder", err);
     } else {
       console.log("New contact folder successfully created");
     }
+
+    const contactHtml = path.join(contactFolderPath, "index.html");
+    fs.writeFile(
+      contactHtml,
+      "Hello, this is HTML content for contact!",
+      "utf8",
+      (err) => {
+        if (err) {
+          console.error("Error creating contact HTML file", err);
+        } else {
+          console.log("Contact HTML file successfully created");
+        }
+      }
+    );
+
+    const contactCss = path.join(contactFolderPath, "style.css");
+    fs.writeFile(
+      contactCss,
+      "Hello, this is CSS content for contact!",
+      "utf8",
+      (err) => {
+        if (err) {
+          console.error("Error creating contact CSS file", err);
+        } else {
+          console.log("Contact CSS file successfully created");
+        }
+      }
+    );
   });
 });
