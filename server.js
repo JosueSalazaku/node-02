@@ -22,12 +22,32 @@ fs.mkdir(clientPath, (err) => {
 
     const newFilePath = path.join(clientPath, "index.html");
 
-//     fs.writeFile(newFilePath, "Hello, this is HTML content!", "utf8", (err) => {
-//       if (err) {
-//         console.error("Error creating new HTML file", err);
-//       } else {
-//         console.log("HTML file successfully created");
-//       }
-//     });
-//   }
-// });
+    fs.writeFile(newFilePath, "Hello, this is HTML content!", "utf8", (err) => {
+      if (err) {
+        console.error("Error creating new HTML file", err);
+      } else {
+        console.log("HTML file successfully created");
+      }
+    });
+  }
+
+  const cssFile = path.join(clientPath, "style.css");
+
+  fs.writeFile(cssFile, "Hello, this is HTML content!", "utf8", (err) => {
+    if (err) {
+      console.error("Error creating new css file", err);
+    } else {
+      console.log("Css file successfully created");
+    }
+  });
+
+  const contactFolderPath = path.join(clientPath, "contact");
+
+  fs.mkdir(contactFolderPath, (err) => {
+    if (err) {
+      console.error("Error creating new contact folder", err);
+    } else {
+      console.log("New contact folder successfully created");
+    }
+  });
+});
