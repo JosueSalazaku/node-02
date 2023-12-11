@@ -1,1 +1,11 @@
-Hello, this is CSS content for contact!
+body {
+        font-family: "Poppins", sans-serif;
+        background: yellow;
+        color: blueviolet;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+      }

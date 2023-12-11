@@ -55,6 +55,8 @@ createFolder(clientPath, () => {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100vw;
+    height: 100vh;
   }`;
   createFile(cssFile, cssContent);
 
@@ -77,6 +79,18 @@ createFolder(clientPath, () => {
 
     const contactCss = path.join(contactFolderPath, "style.css");
     createFile(contactCss, "Hello, this is CSS content for contact!");
+    const cssContent = `body {
+        font-family: "Poppins", sans-serif;
+        background: yellow;
+        color: blueviolet;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+      }`;
+    createFile(contactCss, cssContent);
   });
 
   const aboutFolderPath = path.join(clientPath, "about");
@@ -98,6 +112,18 @@ createFolder(clientPath, () => {
 
     const aboutCss = path.join(aboutFolderPath, "style.css");
     createFile(aboutCss, "Hello, this is CSS content for about!");
+    const cssContent = `body {
+        font-family: "Poppins", sans-serif;
+        background: blue;
+        color: blueviolet;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+      }`;
+    createFile(aboutCss, cssContent);
   });
 
   const blogFolderPath = path.join(clientPath, "blog");
@@ -119,5 +145,17 @@ createFolder(clientPath, () => {
 
     const blogCss = path.join(blogFolderPath, "style.css");
     createFile(blogCss, "Hello, this is CSS content for blog!");
+    const cssContent = `body {
+        font-family: "Poppins", sans-serif;
+        background: purple;
+        color: blueviolet;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+      }`;
+    createFile(blogCss, cssContent);
   });
 });
