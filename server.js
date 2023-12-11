@@ -1,5 +1,6 @@
 const path = require("path");
 const fs = require("fs");
+const os = require("node:os");
 
 function createFolder(folderPath, callback) {
   fs.mkdir(folderPath, (err) => {
@@ -158,4 +159,8 @@ createFolder(clientPath, () => {
       }`;
     createFile(blogCss, cssContent);
   });
+
+  const clientTxtfile = path.join(clientPath, "info.txt");
+  const osInfo = `This is being run on a ${os.type()} computer!`;
+  createFile(clientTxtfile, osInfo);
 });
