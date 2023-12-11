@@ -38,41 +38,78 @@ fs.mkdir(clientPath, (err) => {
       console.log("CSS file successfully created");
     }
   });
+});
 
-  const contactFolderPath = path.join(clientPath, "contact");
-  fs.mkdir(contactFolderPath, (err) => {
-    if (err) {
-      console.error("Error creating new contact folder", err);
-    } else {
-      console.log("New contact folder successfully created");
+const contactFolderPath = path.join(clientPath, "contact");
+fs.mkdir(contactFolderPath, (err) => {
+  if (err) {
+    console.error("Error creating new contact folder", err);
+  } else {
+    console.log("New contact folder successfully created");
+  }
+
+  const contactHtml = path.join(contactFolderPath, "index.html");
+  fs.writeFile(
+    contactHtml,
+    "Hello, this is HTML content for contact!",
+    "utf8",
+    (err) => {
+      if (err) {
+        console.error("Error creating contact HTML file", err);
+      } else {
+        console.log("Contact HTML file successfully created");
+      }
     }
+  );
 
-    const contactHtml = path.join(contactFolderPath, "index.html");
-    fs.writeFile(
-      contactHtml,
-      "Hello, this is HTML content for contact!",
-      "utf8",
-      (err) => {
-        if (err) {
-          console.error("Error creating contact HTML file", err);
-        } else {
-          console.log("Contact HTML file successfully created");
-        }
+  const contactCss = path.join(contactFolderPath, "style.css");
+  fs.writeFile(
+    contactCss,
+    "Hello, this is CSS content for contact!",
+    "utf8",
+    (err) => {
+      if (err) {
+        console.error("Error creating contact CSS file", err);
+      } else {
+        console.log("Contact CSS file successfully created");
       }
-    );
+    }
+  );
+});
 
-    const contactCss = path.join(contactFolderPath, "style.css");
-    fs.writeFile(
-      contactCss,
-      "Hello, this is CSS content for contact!",
-      "utf8",
-      (err) => {
-        if (err) {
-          console.error("Error creating contact CSS file", err);
-        } else {
-          console.log("Contact CSS file successfully created");
-        }
+const aboutFilePaht = path.join(clientPath, "about");
+fs.mkdir(aboutFilePaht, (err) => {
+  if (err) {
+    console.error("Error creating about folder", err);
+  } else {
+    console.log("Found about folder");
+  }
+
+  const aboutHtml = path.join(aboutFilePaht, "index.html");
+  fs.writeFile(
+    aboutHtml,
+    "Hello, this is Html content for contact!",
+    "utf8",
+    (err) => {
+      if (err) {
+        console.error("Error finding about Html", err);
+      } else {
+        console.log("Found about Html file");
       }
-    );
-  });
+    }
+  );
+
+  const aboutCss = path.join(aboutFilePaht, "style.css");
+  fs.writeFile(
+    aboutCss,
+    "Hello, this is CSS content for contact!",
+    "utf8",
+    (err) => {
+      if (err) {
+        console.error("Error finding about CSS", err);
+      } else {
+        console.log("Found about Css file");
+      }
+    }
+  );
 });
